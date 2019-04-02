@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+      <div id="wrap">
+        {{ message }} 
+      </div>
+
+</body>
+<script src="/js/vue.js"></script>
+<script type="text/javascript">
+    var vm = new Vue ({
+    el: "#warp",
+    // data: 里面的数据都会和 DOM 已经被建立了关联，所有东西都是响应式的。data外的数据，不会关联
+    data: function () {
+        return {
+             message: "hello vue"
+        }
+      }
+    });
+</script>
+</html>

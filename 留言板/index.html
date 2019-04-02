@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue实现留言板功能</title>
+		<link rel="stylesheet" type="text/css" href="css/message.css"/>
+		
+	</head>
+	<body>
+	<div id="wrap" class="showMsg">
+                <ul class="list">
+                    
+                    
+                    <li
+                    class="msg"
+                     v-for="(value,key) in list"
+                     :key="key"
+                     @click.stop="handDelet(key)"
+                     >
+                        <img class="pic" v-bind:src="value.img">
+                        <p class="msgCount">
+                            {{  value.text  }}
+                        </p>
+                        <div class="date">
+                            <p>{{  value.time  }}</p>
+                            <a href="#" class="del">{{  value.delet  }}</a>
+                        </div>
+                    </li>
+                    
+                </ul>
+                <button
+                 class="btn"
+                 @click="theEventClick"
+                
+                >{{  publishedComments  }}</button>
+                <!-- 弹出留言框 -->
+                <div
+                 class="msg_blck"
+                 v-if="flag"
+                 >
+                    <div class="msg_cont">
+                        <a
+                         class="closeBtn" href="#"
+                         @click="theEventClick"
+                         >{{  buttonTwo  }}</a>
+                        <textarea
+                        	 rows="20"
+                        	 cols="30"
+                        	 class="tarea"
+                        	 v-model = "buttonValue"
+                        ></textarea>
+                        <button
+                         class="confirmBtn"
+                         @click="releaseClick"
+                         >{{  release  }}</button>
+                    </div>
+        
+                </div>
+            </div>
+	
+	<script type="text/javascript" src="js/jquery-1.12.4.js" ></script>
+	<script type="text/javascript" src="js/vue.js" ></script>
+	<script type="text/javascript" src="js/index.js" ></script>
+
+	 </script>
+	</body>
+</html>
